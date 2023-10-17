@@ -7,7 +7,7 @@ CREATE TABLE characters (
 charName NVARCHAR(100)
 ) 
 
--- Insercion de registro
+-- Inserción de registro
 INSERT INTO characters VALUES('hello world') 
 SELECT * FROM characters
 
