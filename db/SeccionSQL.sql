@@ -2,7 +2,7 @@
 create database evaluacion 
 use evaluacion
 
--- Creacion de la tabla
+-- Creación de la tabla
 create table characters (
 charName NVARCHAR(100)
-)
+) 
