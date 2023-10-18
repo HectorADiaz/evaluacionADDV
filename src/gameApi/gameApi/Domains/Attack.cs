@@ -20,6 +20,7 @@ namespace gameApi.Entities
         public int defenderId { get; set; }
 
 
-
+        public Game Game { get; set; }
+        public Defender Defender { get; set; }
     }
 }

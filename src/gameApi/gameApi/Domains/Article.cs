@@ -21,6 +21,7 @@ namespace gameApi.Entities
         [Range(1, 100)]
         [ForeignKey("Scope")]
         public int scopeId { get; set; }
+        public Scope Scope { get; set; }
 
     }
 }
