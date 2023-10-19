@@ -44,13 +44,13 @@ namespace gameApi.Controllers
         //}
 
         [HttpGet("Status")]
-        public async Task<ActionResult<ManticoraDto>> Getmanticora()
+        public async Task<ActionResult<ManticoraDto>> StatusManticora()
         {
             try
             {
                 Log.Information("Process Call into manticora Status " + DateTime.Now);
                 ManticoraDto result = new ManticoraDto();
-                result = await ManticoraService.CrearManticoraDtoAsincronamente(context);
+                result = await ManticoraService.StatusManticora(context);
                 return Ok(result);
             }
             catch (Exception e) 
@@ -62,7 +62,26 @@ namespace gameApi.Controllers
              
         }
 
-       
+        [HttpGet("Position")]
+        public async Task<ActionResult<ManticoraDto>> GetPosition()
+        {
+            try
+            {
+                Log.Information("Process Call into manticora Status " + DateTime.Now);
+               // ManticoraDto result = new ManticoraDto();
+                var result = await ManticoraService.GetPosition(context);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "Process: " + e.Message);
+                return BadRequest(e.Message);
+
+            }
+
+        }
+
+
 
 
 
