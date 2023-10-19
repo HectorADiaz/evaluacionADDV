@@ -1,4 +1,4 @@
--- Creación de tabla
+-- CreaciÃ³n de tabla
 CREATE TABLE employees(
 	employee_id INT PRIMARY KEY IDENTITY (1, 1),
 	First_Name NVARCHAR (50) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE employees(
 	manager_id INT NULL
 )
 
--- Inserción de registros
+-- InserciÃ³n de registros
 INSERT INTO employees 
   (First_Name, Last_Name, manager_id)
 VALUES
@@ -63,7 +63,7 @@ BEGIN
 END
 
 --Ejecutamos Procedimiento Almacenado
-EXEC GetTree @employeeId = 7; -- Cambia 123 por el valor que desees
+EXEC GetTree @employeeId = 7; -- Cambia por el valor que desees
  
 
 
