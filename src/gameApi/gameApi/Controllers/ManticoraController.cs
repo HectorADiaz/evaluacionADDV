@@ -20,29 +20,6 @@ namespace gameApi.Controllers
             this.context = context;
         }
 
-
-        //
-        //[HttpGet]
-        //public async Task<ActionResult<ResponseOk<List<ManticoraDto>>>> Get()
-        //{
-        //    //ResponseOk<List<ManticoraDto>> response = new ResponseOk<List<ManticoraDto>> 
-        //    //{
-
-        //    //}
-        //    var response = new { mensaje = "Esto es un ejemplo de respuesta OK" };
-
-        //    return Ok(response);
-        //}
-
-        //[HttpGet]
-        //public async Task<ActionResult<ManticoraDto>> Get()
-        //{
-        //    await Task.Delay(1000);
-        //    var response = new { mensaje = "Esto es un ejemplo de respuesta OK" };
-        //    // var manticoraDto = new ManticoraDto { mensaje = "Esto es un ejemplo de respuesta OK" };
-        //    return Ok(response);
-        //}
-
         [HttpGet("Status")]
         public async Task<ActionResult<ManticoraDto>> StatusManticora()
         {
@@ -58,8 +35,7 @@ namespace gameApi.Controllers
                 Log.Error(e,"Process: "+ e.Message);
                 return BadRequest(e.Message);
                 
-            }
-             
+            }     
         }
 
         [HttpGet("Position")]
@@ -78,11 +54,7 @@ namespace gameApi.Controllers
                 return BadRequest(e.Message);
 
             }
-
         }
-
-
-
 
 
     }

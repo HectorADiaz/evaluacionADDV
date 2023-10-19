@@ -22,7 +22,7 @@ namespace gameApi.Controllers
         {
             try
             {
-                Log.Information("Process Call into manticora Status " + DateTime.Now);
+                Log.Information("Process Call into Articles Status " + DateTime.Now);
 
                 List<ArticleDto> result = new List<ArticleDto>();
                 result = await ArticleService.GetArticles(context);

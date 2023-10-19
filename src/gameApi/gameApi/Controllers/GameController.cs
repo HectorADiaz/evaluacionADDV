@@ -39,7 +39,7 @@ namespace gameApi.Controllers
         {
             try
             {
-                Log.Information("Process Call into manticora Status " + DateTime.Now);
+                Log.Information("Process Call into EndGame Status " + DateTime.Now);
 
                 GameDto result = new GameDto();
                 result = await GameService.InitGame(context);
