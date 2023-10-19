@@ -18,6 +18,7 @@ namespace gameApi.Entities
         [ForeignKey("Manticora")]
         public int manticoraId { get; set; }
 
+        public Manticora Manticora { get; set; }
       
     }
 }

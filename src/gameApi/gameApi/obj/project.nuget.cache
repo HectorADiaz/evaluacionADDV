@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zchFzGLUcjW2Rao1cMpCMHf+wpVViZk1L5FuKlFC37+i6g8nCI9q78ARDEmL1T6fUqy7Y2OGYdnLCHRVHEEeLg==",
+  "dgSpecHash": "6d1wzDpA29CBCLzDQ2GPr1Vce8YH1b+kEs4PrIJfzjckJpkRQhOm4y95HEUU+BwW1Ty/lVa2W5KMvC8gsL+hNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Login\\Desktop\\EvaluacionHectorDiaz\\src\\gameApi\\gameApi\\gameApi.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\Login\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Login\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Login\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Login\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
     "C:\\Users\\Login\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.2\\sqlitepclraw.bundle_e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\Login\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\Login\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",

@@ -10,7 +10,7 @@ using gameApi;
 namespace gameApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231018212437_foreignkeyAll")]
+    [Migration("20231018215226_foreignkeyAll")]
     partial class foreignkeyAll
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

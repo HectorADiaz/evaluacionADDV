@@ -9,7 +9,6 @@ namespace gameApi.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int defenderId { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string defenderName { get; set; }
 

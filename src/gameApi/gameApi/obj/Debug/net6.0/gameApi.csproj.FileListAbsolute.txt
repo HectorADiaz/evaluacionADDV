@@ -134,3 +134,4 @@ C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\gameApi.pdb
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\gameApi.genruntimeconfig.cache
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\ref\gameApi.dll
+C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Serilog.dll
