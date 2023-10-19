@@ -3,22 +3,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace gameApi.Entities
 {
-    public class Defender
+    public class Game
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int defenderId { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string defenderName { get; set; }
-
+        public int gameId { get; set; }
+        
         [Required]
         [Range(1, 100)]
-        public int balance { get; set; }
+        public int cityPoints { get; set; }
 
         [Required]
-        [Range(1, 100)]
-        public int shot { get; set; }
+        [Range(10, 100)]
+        [ForeignKey("Manticora")]
+        public int manticoraId { get; set; }
+
+        public Manticora Manticora { get; set; }
+      
     }
 }

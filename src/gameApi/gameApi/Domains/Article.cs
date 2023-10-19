@@ -19,8 +19,7 @@ namespace gameApi.Entities
 
         [Required]
         [Range(1, 100)]
-        [ForeignKey("Scope")]
-        public int scopeId { get; set; }
-
+        public int scopeValue { get; set; }
+        
     }
 }

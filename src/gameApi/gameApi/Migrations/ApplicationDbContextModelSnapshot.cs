@@ -30,7 +30,7 @@ namespace gameApi.Migrations
                     b.Property<int>("articlePrice")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("scopeId")
+                    b.Property<int>("scopeValue")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("articleId");
@@ -51,6 +51,10 @@ namespace gameApi.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("attackId");
+
+                    b.HasIndex("defenderId");
+
+                    b.HasIndex("gameId");
 
                     b.ToTable("attacks");
                 });
@@ -91,6 +95,8 @@ namespace gameApi.Migrations
 
                     b.HasKey("gameId");
 
+                    b.HasIndex("manticoraId");
+
                     b.ToTable("games");
                 });
 
@@ -111,20 +117,6 @@ namespace gameApi.Migrations
                     b.ToTable("manticoras");
                 });
 
-            modelBuilder.Entity("gameApi.Entities.Scope", b =>
-                {
-                    b.Property<int>("scopeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("scopeValue")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("scopeId");
-
-                    b.ToTable("scopes");
-                });
-
             modelBuilder.Entity("gameApi.Entities.Stock", b =>
                 {
                     b.Property<int>("stockId")
@@ -142,7 +134,60 @@ namespace gameApi.Migrations
 
                     b.HasKey("stockId");
 
+                    b.HasIndex("articleId");
+
+                    b.HasIndex("defenderId");
+
                     b.ToTable("stocks");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Attack", b =>
+                {
+                    b.HasOne("gameApi.Entities.Defender", "Defender")
+                        .WithMany()
+                        .HasForeignKey("defenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gameApi.Entities.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("gameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Defender");
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Game", b =>
+                {
+                    b.HasOne("gameApi.Entities.Manticora", "Manticora")
+                        .WithMany()
+                        .HasForeignKey("manticoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Manticora");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Stock", b =>
+                {
+                    b.HasOne("gameApi.Entities.Article", "Article")
+                        .WithMany()
+                        .HasForeignKey("articleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gameApi.Entities.Defender", "Defender")
+                        .WithMany()
+                        .HasForeignKey("defenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+
+                    b.Navigation("Defender");
                 });
 #pragma warning restore 612, 618
         }

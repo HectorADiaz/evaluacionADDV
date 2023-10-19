@@ -23,6 +23,7 @@ namespace gameApi.Entities
 
         public int status { get; set; }
 
-
+        public Defender Defender { get; set; }
+        public Article Article { get; set; }
     }
 }

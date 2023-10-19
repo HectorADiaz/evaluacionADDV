@@ -14,7 +14,6 @@ namespace gameApi
         public DbSet<Defender> defenders { get; set; }
         public DbSet<Game> games { get; set; }
         public DbSet<Manticora> manticoras { get; set; }
-        public DbSet<Scope> scopes { get; set; }
         public DbSet<Stock> stocks { get; set; }
     }
 }

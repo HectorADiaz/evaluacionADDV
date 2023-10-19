@@ -10,8 +10,8 @@ using gameApi;
 namespace gameApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231018070224_Entities")]
-    partial class Entities
+    [Migration("20231018215226_foreignkeyAll")]
+    partial class foreignkeyAll
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,8 @@ namespace gameApi.Migrations
 
                     b.HasKey("articleId");
 
+                    b.HasIndex("scopeId");
+
                     b.ToTable("articles");
                 });
 
@@ -53,6 +55,10 @@ namespace gameApi.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("attackId");
+
+                    b.HasIndex("defenderId");
+
+                    b.HasIndex("gameId");
 
                     b.ToTable("attacks");
                 });
@@ -144,7 +150,60 @@ namespace gameApi.Migrations
 
                     b.HasKey("stockId");
 
+                    b.HasIndex("articleId");
+
+                    b.HasIndex("defenderId");
+
                     b.ToTable("stocks");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Article", b =>
+                {
+                    b.HasOne("gameApi.Entities.Scope", "Scope")
+                        .WithMany()
+                        .HasForeignKey("scopeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Scope");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Attack", b =>
+                {
+                    b.HasOne("gameApi.Entities.Defender", "Defender")
+                        .WithMany()
+                        .HasForeignKey("defenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gameApi.Entities.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("gameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Defender");
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Stock", b =>
+                {
+                    b.HasOne("gameApi.Entities.Article", "Article")
+                        .WithMany()
+                        .HasForeignKey("articleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gameApi.Entities.Defender", "Defender")
+                        .WithMany()
+                        .HasForeignKey("defenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+
+                    b.Navigation("Defender");
                 });
 #pragma warning restore 612, 618
         }
