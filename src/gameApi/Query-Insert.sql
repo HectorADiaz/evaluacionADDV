@@ -3,13 +3,13 @@ INSERT INTO scopes (scopeValue)
 VALUES (50),(40),(30),(20),(10);
 
 
-INSERT INTO articles (articleName,articlePrice,scopeId)
+INSERT INTO articles (articleName,articlePrice,scopeValue)
 VALUES
-('Gran Cañón',80,1),
-('Metralla',60,2),
-('Mosquete',50,3),
-('Pistola',30,5),
-('Granada',10,5)
+('Gran Cañón',80,50),
+('Metralla',60,40),
+('Mosquete',50,30),
+('Pistola',30,50),
+('Granada',10,10)
 
 INSERT INTO defenders (defenderName, balance, shot)
 VALUES

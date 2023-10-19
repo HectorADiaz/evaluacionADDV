@@ -14,7 +14,7 @@ namespace gameApi.Services
                 articleId = x.articleId,
                 articleName = x.articleName,
                 articlePrice = x.articlePrice,
-                scopeValue = x.Scope.scopeValue
+                scopeValue = x.scopeValue
             })
             .ToListAsync();
  

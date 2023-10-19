@@ -30,12 +30,10 @@ namespace gameApi.Migrations
                     b.Property<int>("articlePrice")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("scopeId")
+                    b.Property<int>("scopeValue")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("articleId");
-
-                    b.HasIndex("scopeId");
 
                     b.ToTable("articles");
                 });
@@ -97,6 +95,8 @@ namespace gameApi.Migrations
 
                     b.HasKey("gameId");
 
+                    b.HasIndex("manticoraId");
+
                     b.ToTable("games");
                 });
 
@@ -115,20 +115,6 @@ namespace gameApi.Migrations
                     b.HasKey("manticoraId");
 
                     b.ToTable("manticoras");
-                });
-
-            modelBuilder.Entity("gameApi.Entities.Scope", b =>
-                {
-                    b.Property<int>("scopeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("scopeValue")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("scopeId");
-
-                    b.ToTable("scopes");
                 });
 
             modelBuilder.Entity("gameApi.Entities.Stock", b =>
@@ -155,17 +141,6 @@ namespace gameApi.Migrations
                     b.ToTable("stocks");
                 });
 
-            modelBuilder.Entity("gameApi.Entities.Article", b =>
-                {
-                    b.HasOne("gameApi.Entities.Scope", "Scope")
-                        .WithMany()
-                        .HasForeignKey("scopeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Scope");
-                });
-
             modelBuilder.Entity("gameApi.Entities.Attack", b =>
                 {
                     b.HasOne("gameApi.Entities.Defender", "Defender")
@@ -183,6 +158,17 @@ namespace gameApi.Migrations
                     b.Navigation("Defender");
 
                     b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("gameApi.Entities.Game", b =>
+                {
+                    b.HasOne("gameApi.Entities.Manticora", "Manticora")
+                        .WithMany()
+                        .HasForeignKey("manticoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Manticora");
                 });
 
             modelBuilder.Entity("gameApi.Entities.Stock", b =>

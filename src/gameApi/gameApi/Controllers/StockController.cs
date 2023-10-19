@@ -21,7 +21,7 @@ namespace gameApi.Controllers
 
 
 
-        [HttpGet("Art")]
+        [HttpGet("Article")]
         public async Task<ActionResult<List<StockDto>>> GetStock()
         {
             try
@@ -41,3 +41,4 @@ namespace gameApi.Controllers
 
         }
     }
+}
