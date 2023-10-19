@@ -17,7 +17,7 @@ namespace gameApi.Services
 
             var _statusDefender = new DefenderDto
             {
-                balance = 15,
+                balance = 100,
                 shot = 5
             };
 
@@ -27,7 +27,7 @@ namespace gameApi.Services
                 defender.shot = _statusDefender.shot;
             }
 
-            statusGame.cityPoints = 100;
+            statusGame.cityPoints = 15;
             statusGame.Manticora.manticoraPoints = 10;
 
             await context.SaveChangesAsync();
