@@ -37,6 +37,33 @@ VALUES
     INNER JOIN employeeId eh ON e.employee_id = eh.manager_id
 )
 SELECT * FROM employeeId;
+
+
+
+--Procedimiento Almacenado 
+use evaluacion
+CREATE PROCEDURE GetTree
+    @employeeId INT
+AS
+BEGIN
+   		-- Ancla
+	WITH employeeId AS (
+    SELECT employee_id, First_Name, manager_id
+    FROM employees
+    WHERE employee_id = @employeeId
+
+    UNION ALL
+
+		-- Recursivo
+    SELECT e.employee_id, e.First_Name, e.manager_id
+    FROM employees e
+    INNER JOIN employeeId eh ON e.employee_id = eh.manager_id
+	)
+    SELECT * FROM employeeId;
+END
+
+--Ejecutamos Procedimiento Almacenado
+EXEC GetTree @employeeId = 7; -- Cambia 123 por el valor que desees
  
 
 
