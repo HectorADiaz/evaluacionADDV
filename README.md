@@ -1,6 +1,7 @@
 # Manticora Game
 Este es un proyecto increíble sobre el Juego de Manticora. A continuación, encontrarás información importante sobre cómo usarlo, contribuir y más.
 
+:construction: Proyecto en construcción :construction:
 ## Instalación
 Para instalar este proyecto, simplemente sigue estos pasos:
 
