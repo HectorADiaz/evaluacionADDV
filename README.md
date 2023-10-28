@@ -1,10 +1,11 @@
 # Manticora Game
 Este es un proyecto increíble sobre el Juego de Manticora. A continuación, encontrarás información importante sobre cómo usarlo, contribuir y más.
 
+:construction: Proyecto en construcción :construction:
 ## Instalación
 Para instalar este proyecto, simplemente sigue estos pasos:
 
-1. Clona el repositorio: `git clone https://github.com/tuusuario/tuprojecto.git](https://github.com/HectorADiaz/evaluacionADDV.git`
+1. Clona el repositorio: `https://github.com/HectorADiaz/evaluacionADDV.git`
 2. ¡Listo!
 
 ## Uso
