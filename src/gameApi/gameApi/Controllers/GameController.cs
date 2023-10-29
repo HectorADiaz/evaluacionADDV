@@ -5,6 +5,8 @@ using Serilog;
 
 namespace gameApi.Controllers
 {
+    [Route("api/Controller")]
+    [ApiController]
     public class GameController : ControllerBase
     {
         // Context
@@ -19,7 +21,7 @@ namespace gameApi.Controllers
         {
             try
             {
-                Log.Information("Process Call into manticora Status " + DateTime.Now);
+                Log.Information("Process Call into Init Game" + DateTime.Now);
 
                 GameDto result = new GameDto();
                 result = await GameService.InitGame(context);

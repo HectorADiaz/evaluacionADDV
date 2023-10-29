@@ -1,4 +1,5 @@
 ﻿using gameApi.DTOs;
+using gameApi.Interfaces;
 using gameApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -6,30 +7,28 @@ using System.Collections.Generic;
 
 namespace gameApi.Controllers
 {
-    [Route("api/stock")]
-    [ApiController]
+    [Route("api/Controller")]
+    [ApiController] 
     public class StockController : ControllerBase
     {
 
         // Context
-        private readonly ApplicationDbContext context;
-        public StockController(ApplicationDbContext context)
+        private readonly IStockService _stockService;
+
+        public StockController(IStockService stockService)
         {
-            this.context = context;
+            _stockService = stockService;
         }
-
-
-
 
         [HttpGet("Article")]
         public async Task<ActionResult<List<StockDto>>> GetStock()
         {
             try
             {
-                Log.Information("Process Call into manticora Status " + DateTime.Now);
+                Log.Information("Process Call into Stock Status " + DateTime.Now);
 
                 List<StockDto> result = new List<StockDto>();
-                result = await StockService.GetStock(context);
+                result = await _stockService.GetStock();
                 return Ok(result);
             }
             catch (Exception e)

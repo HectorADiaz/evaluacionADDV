@@ -84,6 +84,7 @@ C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Serilog.dll
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -134,4 +135,3 @@ C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\gameApi.pdb
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\gameApi.genruntimeconfig.cache
 C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\obj\Debug\net6.0\ref\gameApi.dll
-C:\Users\Login\Desktop\EvaluacionHectorDiaz\src\gameApi\gameApi\bin\Debug\net6.0\Serilog.dll

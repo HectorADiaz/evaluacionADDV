@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace gameApi.Controllers
 {
-    [Route("api/article")]
+    [Route("api/Controller")]
     [ApiController]
     public class ArticleController : ControllerBase
     {
@@ -36,6 +36,7 @@ namespace gameApi.Controllers
             }
 
         }
+
 
 
 

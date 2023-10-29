@@ -1,14 +1,22 @@
 ﻿using gameApi.DTOs;
 using gameApi.Entities;
+using gameApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace gameApi.Services
 {
-    public class StockService
+    public class StockService : IStockService
     {
-        public static async Task<List<StockDto>> GetStock(ApplicationDbContext context)
+        private readonly ApplicationDbContext _context;
+
+        public StockService(ApplicationDbContext context)
         {
-            List<StockDto> result = await context.stocks.Select(
+            _context = context;
+        }
+
+        public async Task<List<StockDto>> GetStock()
+        {
+            List<StockDto> result = await _context.stocks.Select(
                 stock => new StockDto
                 {
                     stockId = stock.stockId,

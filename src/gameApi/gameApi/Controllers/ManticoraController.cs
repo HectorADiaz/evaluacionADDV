@@ -8,7 +8,7 @@ using Serilog;
 
 namespace gameApi.Controllers
 {
-    [Route("api/manticora")]
+    [Route("api/Controller")]
     [ApiController]
     public class ManticoraController : ControllerBase
     {

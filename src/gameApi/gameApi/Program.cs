@@ -1,7 +1,12 @@
 using gameApi;
+using gameApi.Interfaces;
+using gameApi.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using gameApi.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +21,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlite("Data Source=midb.db"));
+builder.Services.AddScoped<IStockService, StockService>();
+builder.Services.AddScoped<IAttackService, AttackService>();
 
 
 var app = builder.Build();
