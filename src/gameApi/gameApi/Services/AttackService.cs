@@ -8,7 +8,6 @@ namespace gameApi.Services
     public class AttackService: IAttackService
     {
         private readonly ApplicationDbContext _context;
-
         public AttackService(ApplicationDbContext context)
         {
             _context = context;

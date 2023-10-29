@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using gameApi.Services;
 using Serilog;
-
+using gameApi.Interfaces;
 
 namespace gameApi.Controllers
 {
@@ -14,10 +14,10 @@ namespace gameApi.Controllers
     {
 
         // Context
-        private readonly ApplicationDbContext context;
-        public ManticoraController(ApplicationDbContext context)
+        private readonly IManticoraService _manticoraService;
+        public ManticoraController(IManticoraService manticoraService)
         {
-            this.context = context;
+            _manticoraService = manticoraService;
         }
 
         [HttpGet("Status")]
@@ -27,7 +27,7 @@ namespace gameApi.Controllers
             {
                 Log.Information("Process Call into manticora Status " + DateTime.Now);
                 ManticoraDto result = new ManticoraDto();
-                result = await ManticoraService.StatusManticora(context);
+                result = await _manticoraService.StatusManticora();
                 return Ok(result);
             }
             catch (Exception e) 
@@ -45,7 +45,7 @@ namespace gameApi.Controllers
             {
                 Log.Information("Process Call into manticora Status " + DateTime.Now);
                // ManticoraDto result = new ManticoraDto();
-                var result = await ManticoraService.GetPosition(context);
+                var result = await _manticoraService.GetPosition();
                 return Ok(result);
             }
             catch (Exception e)

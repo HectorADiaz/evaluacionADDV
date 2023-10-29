@@ -1,14 +1,21 @@
 ﻿using gameApi.DTOs;
+using gameApi.Interfaces;
 using Microsoft.EntityFrameworkCore; 
 
 namespace gameApi.Services
 {
-    public class ManticoraService
+    public class ManticoraService: IManticoraService
     {
-        public static async Task<ManticoraDto> StatusManticora(ApplicationDbContext context)
+        private readonly ApplicationDbContext _context;
+        public ManticoraService( ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<ManticoraDto> StatusManticora()
         {
             //obtenemos el primer registro
-             var firstManticora = await context.manticoras.FirstOrDefaultAsync();
+             var firstManticora = await _context.manticoras.FirstOrDefaultAsync();
 
             if (firstManticora != null)
             {
@@ -28,10 +35,10 @@ namespace gameApi.Services
             }
         }
 
-        public static async Task<int> GetPosition(ApplicationDbContext context)
+        public async Task<int> GetPosition()
         {
             // Obtenemos el primer Registro
-            var manticoraPosition = await context.manticoras.FirstOrDefaultAsync();
+            var manticoraPosition = await _context.manticoras.FirstOrDefaultAsync();
             var number = new ManticoraDto
             {
                 manticoraPosition = manticoraPosition.manticoraPosition
@@ -47,7 +54,7 @@ namespace gameApi.Services
 
             //Guardamos la informacion en la bd
             manticoraPosition.manticoraPosition = numeroAleatorio;
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return numeroAleatorio;
 
          

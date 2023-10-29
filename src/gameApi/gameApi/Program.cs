@@ -23,6 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlite("Data Source=midb.db"));
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<IAttackService, AttackService>();
+builder.Services.AddScoped<IManticoraService,ManticoraService>();
 
 
 var app = builder.Build();
