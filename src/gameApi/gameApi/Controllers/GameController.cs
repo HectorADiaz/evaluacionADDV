@@ -1,4 +1,5 @@
 ﻿using gameApi.DTOs;
+using gameApi.Interfaces;
 using gameApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -10,22 +11,24 @@ namespace gameApi.Controllers
     public class GameController : ControllerBase
     {
         // Context
-        private readonly ApplicationDbContext context;
-        public GameController(ApplicationDbContext context)
+        private readonly IGameService _gameService;
+        public GameController(IGameService gameService)
         {
-            this.context = context;
+            _gameService = gameService;
         }
-
         [HttpPost("InitGame")]
-        public async Task<ActionResult<GameDto>> InitGame()
+        public async Task<ActionResult<string>> InitGame()
         {
             try
             {
                 Log.Information("Process Call into Init Game" + DateTime.Now);
-
-                GameDto result = new GameDto();
-                result = await GameService.InitGame(context);
-                return Ok(result);
+                bool result = await _gameService.InitGame();
+                if (result) {
+                    return StatusCode(200, "Proceso Existoso");
+                }
+                else {
+                    return StatusCode(500, "Error en el proceso");
+                }
             }
             catch (Exception e)
             {
@@ -44,7 +47,7 @@ namespace gameApi.Controllers
                 Log.Information("Process Call into EndGame Status " + DateTime.Now);
 
                 GameDto result = new GameDto();
-                result = await GameService.InitGame(context);
+                result = await _gameService.EndGame();
                 return Ok(result);
             }
             catch (Exception e)

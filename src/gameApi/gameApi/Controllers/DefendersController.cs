@@ -14,6 +14,7 @@ namespace gameApi.Controllers
     public class DefendersController : ControllerBase
     {
         // Context
+        //queda pendiente dado a que solo se obtiene listado de defensores
         private readonly ApplicationDbContext context;
         public DefendersController(ApplicationDbContext context) { 
             this.context = context;

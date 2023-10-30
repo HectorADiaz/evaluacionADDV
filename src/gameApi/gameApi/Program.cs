@@ -24,6 +24,12 @@ options.UseSqlite("Data Source=midb.db"));
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<IAttackService, AttackService>();
 builder.Services.AddScoped<IManticoraService,ManticoraService>();
+builder.Services.AddScoped<IGameService, GameService>();
+
+
+
+
+
 
 
 var app = builder.Build();
